@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Projeto Coordenadas</h1>
+    <p>
+      Utilize o filtro abaixo para obter algumas informações sobre a empresa que
+      deseja.
+    </p>
+    <select name="Nome Empresas" id="nome_empresas">
+      <option value="Primogênesis (11.111.111/1111-11)">Primogênesis (11.111.111/1111-11)</option>
+      <option value="Primogênesis (22.222.222/2222-22)">Primogênesis (22.222.222/2222-22)</option>
+      <option value="Primogênesis (33.333.333/3333-33)">Primogênesis (33.333.333/3333-33)</option>
+      <option value="Circuitions (44.444.444/4444-44)">Circuitions (44.444.444/4444-44)</option>
+      <option value="Circuitions (55.555.555/5555-55)">Circuitions (55.555.555/5555-55)</option>
+      <option value="Pastor Belga SA (66.666.666/6666-66)">Pastor Belga SA (66.666.666/6666-66)</option>
+    </select>
+    <button onclick='search()' id="search" >Pesquisar</button>
+    <div class="form-group">
+      <p id="name"></p>
+      <p id="CNPJ"></p>
+      <p id="address"></p>
+      <p id="current_situation"></p>
+      <p id="branch_of_activity"></p>
+      <p id="contact"></p>
+      <p id="coordinatesX"></p>
+      <p id="coordinatesY"></p>
+    </div>
+    <script src="projetoCoordendas.js"></script>
+  </body>
+</html>
