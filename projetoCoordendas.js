@@ -26,7 +26,7 @@
     '-18.570666, -40.241827',
     '-19.691398, -40.959676',
     '-20.241416, -40.364488',
-    '-19. 429496, -40.842260',
+    '-19.429496, -40.842260',
     '-18.424833, -43.507840',
     '-20.356076, -41.344520',
     '-20.036963, -40.170324',
@@ -61,6 +61,35 @@
     'CONSTRACTOR (xx.xxx.xxx/0001-26)'
   ]
 
+  const linksCoordenates = [
+    `https://www.google.com.br/maps/place/19%C2%B041'35.2%22S+40%C2%B017'28.6%22W/@-19.6930929,-40.2934527,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-19.693098!4d-40.291264`,
+    `https://www.google.com.br/maps/place/20%C2%B003'04.5%22S+40%C2%B023'11.8%22W/@-20.0512399,-40.3888007,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-20.051245!4d-40.386612`,
+    `https://www.google.com.br/maps/place/19%C2%B003'37.5%22S+41%C2%B000'52.7%22W/@-19.0604209,-41.0168327,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-19.060426!4d-41.014644`,
+    `https://www.google.com.br/maps/place/18%C2%B036'42.9%22S+41%C2%B001'04.2%22W/@-18.6118999,-41.0200257,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-18.611905!4d-41.017837`,
+    `https://www.google.com.br/maps/place/18%C2%B037'27.8%22S+41%C2%B001'25.5%22W/@-18.6243709,-41.0259377,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-18.624376!4d-41.023749`,
+    `https://www.google.com.br/maps/place/18%C2%B036'39.9%22S+41%C2%B000'56.7%22W/@-18.6110849,-41.0179387,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-18.61109!4d-41.01575`,
+    `https://www.google.com.br/maps/place/18%C2%B037'01.9%22S+41%C2%B001'07.2%22W/@-18.6171749,-41.0208587,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-18.61718!4d-41.01867`,
+    `https://www.google.com.br/maps/place/20%C2%B024'54.4%22S+40%C2%B051'43.7%22W/@-20.415109,-40.8643357,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-20.415114!4d-40.862147`,
+    `https://www.google.com.br/maps/place/20%C2%B036'57.0%22S+40%C2%B043'55.8%22W/@-20.615825,-40.7343587,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-20.61583!4d-40.73217`,
+    `https://www.google.com.br/maps/place/18%C2%B058'43.4%22S+40%C2%B044'28.6%22W/@-18.9787059,-40.7434567,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-18.978711!4d-40.741268`,
+    `https://www.google.com.br/maps/place/18%C2%B034'20.1%22S+41%C2%B016'39.7%22W/@-18.5722319,-41.2798887,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-18.572237!4d-41.2777`,
+    `https://www.google.com.br/maps/place/15%C2%B044'11.0%22S+39%C2%B037'16.0%22W/@-15.7363838,-39.6232997,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-15.736389!4d-39.621111`,
+    `https://www.google.com.br/maps/place/15%C2%B044'46.0%22S+39%C2%B036'58.0%22W/@-15.7461058,-39.6182997,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-15.746111!4d-39.616111`,
+    `https://www.google.com.br/maps/place/15%C2%B044'27.0%22S+39%C2%B037'03.0%22W/@-15.7408278,-39.6196887,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-15.740833!4d-39.6175`,
+    `https://www.google.com.br/maps/place/15%C2%B044'37.0%22S+39%C2%B037'04.0%22W/@-15.7436058,-39.6199657,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-15.743611!4d-39.617777`,
+    `https://www.google.com.br/maps/place/15%C2%B037'36.0%22S+40%C2%B006'27.0%22W/@-15.6266618,-40.1096887,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-15.626667!4d-40.1075`,
+    `https://www.google.com.br/maps/place/19%C2%B007'23.8%22S+40%C2%B014'35.5%22W/@-19.1232749,-40.2453777,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-19.12328!4d-40.243189`,
+    `https://www.google.com.br/maps/place/18%C2%B024'23.5%22S+40%C2%B013'33.8%22W/@-18.4065159,-40.2282367,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-18.406521!4d-40.226048`,
+    `https://www.google.com.br/maps/place/18%C2%B034'14.4%22S+40%C2%B014'30.6%22W/@-18.5706609,-40.2440157,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-18.570666!4d-40.241827`,
+    `https://www.google.com.br/maps/place/19%C2%B041'29.0%22S+40%C2%B057'34.8%22W/@-19.6913929,-40.9618647,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-19.691398!4d-40.959676`,
+    `https://www.google.com.br/maps/place/20%C2%B014'29.1%22S+40%C2%B021'52.2%22W/@-20.241411,-40.3666767,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-20.241416!4d-40.364488`,
+    `https://www.google.com.br/maps/place/19%C2%B025'46.2%22S+40%C2%B050'32.1%22W/@-19.4294909,-40.8444487,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-19.429496!4d-40.84226`,
+    `https://www.google.com.br/maps/place/18%C2%B025'29.4%22S+43%C2%B030'28.2%22W/@-18.4248279,-43.5100287,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-18.424833!4d-43.50784`,
+    `https://www.google.com.br/maps/place/20%C2%B021'21.9%22S+41%C2%B020'40.3%22W/@-20.356071,-41.3467087,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-20.356076!4d-41.34452`,
+    `https://www.google.com.br/maps/place/20%C2%B002'13.1%22S+40%C2%B010'13.2%22W/@-20.0369579,-40.1725127,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-20.036963!4d-40.170324`,
+    `https://www.google.com.br/maps/place/19%C2%B044'05.0%22S+40%C2%B016'07.3%22W/@-19.7347249,-40.2708697,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-19.73473!4d-40.268681`
+  ]
+
   $btnSearch.addEventListener(
     'click',
     function (event) {
@@ -68,7 +97,10 @@
       $coordenates.innerHTML = ''
       arrayEmpresas.forEach(function (element, index) {
         if ($empresaSelecionada.value === element)
-          $coordenates.innerHTML = arrayCoordenates[index]
+          $coordenates.innerHTML =
+            `<a href="${linksCoordenates[index]}" target="blanck">` +
+            arrayCoordenates[index] +
+            '</a>'
       })
     },
     false
