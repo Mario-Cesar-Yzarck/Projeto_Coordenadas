@@ -9,94 +9,32 @@
   <body>
     <h1>Projeto Coordenadas</h1>
     <p>
-      Utilize o filtro abaixo para obter algumas informações sobre a empresa que
-      deseja.
+      Selecione abaixo a empresa que deseja verificar as coordenadas de
+      localização.
     </p>
-    <select data-js="nome_empresas" name="Nome_Empresas" id="nome_empresas">
+    <select data-js="nome_empresas">
       <option>Selecione a empresa</option>
-      <option value="101 NORTE (xx.xxx.xxx/0001-01)">
-        101 NORTE (xx.xxx.xxx/0001-01)
-      </option>
-      <option value="A&L PARTICIPAÇÕES (xx.xxx.xxx/0001-02)">
-        A&L PARTICIPAÇÕES (xx.xxx.xxx/0001-02)
-      </option>
-      <option value="AGRIPINO (xx.xxx.xxx/0001-03)">
-        AGRIPINO (xx.xxx.xxx/0001-03)
-      </option>
-      <option value="ÁGUA DOCE MINERAÇÃO (xx.xxx.xxx/0001-04)">
-        ÁGUA DOCE MINERAÇÃO (xx.xxx.xxx/0001-04)
-      </option>
-      <option value="ÁGUA DOCE MINERAÇÃO (xx.xxx.xxx/0001-05)">
-        ÁGUA DOCE MINERAÇÃO (xx.xxx.xxx/0001-05)
-      </option>
-      <option value="ÁGUA DOCE MINERAÇÃO (xx.xxx.xxx/0001-06)">
-        ÁGUA DOCE MINERAÇÃO (xx.xxx.xxx/0001-06)
-      </option>
-      <option value="ÁGUA DOCE MINERAÇÃO (xx.xxx.xxx/0001-07)">
-        ÁGUA DOCE MINERAÇÃO (xx.xxx.xxx/0001-07)
-      </option>
-      <option value="ÁGUA PEDRA AZUL (xx.xxx.xxx/0001-08)">
-        ÁGUA PEDRA AZUL (xx.xxx.xxx/0001-08)
-      </option>
-      <option value="ÁGUA PEDRA AZUL (xx.xxx.xxx/0001-09)">
-        ÁGUA PEDRA AZUL (xx.xxx.xxx/0001-09)
-      </option>
-      <option value="ALMIR LAZARI (xx.xxx.xxx/0001-10)">
-        ALMIR LAZARI (xx.xxx.xxx/0001-10)
-      </option>
-      <option value="AM GRANITOS (xx.xxx.xxx/0001-11)">
-        AM GRANITOS (xx.xxx.xxx/0001-11)
-      </option>
-      <option value="AMAGRAN (xx.xxx.xxx/0001-12)">
-        AMAGRAN (xx.xxx.xxx/0001-12)
-      </option>
-      <option value="AMAGRAN (xx.xxx.xxx/0001-13)">
-        AMAGRAN (xx.xxx.xxx/0001-13)
-      </option>
-      <option value="AMAGRAN (xx.xxx.xxx/0001-14)">
-        AMAGRAN (xx.xxx.xxx/0001-14)
-      </option>
-      <option value="AMAGRAN (xx.xxx.xxx/0001-15)">
-        AMAGRAN (xx.xxx.xxx/0001-15)
-      </option>
-      <option value="AMAGRAN (xx.xxx.xxx/0001-16)">
-        AMAGRAN (xx.xxx.xxx/0001-16)
-      </option>
-      <option value="AREPEDRA (xx.xxx.xxx/0001-17)">
-        AREPEDRA (xx.xxx.xxx/0001-17)
-      </option>
-      <option value="BELA VISTA (xx.xxx.xxx/0001-18)">
-        BELA VISTA(xx.xxx.xxx/0001-18)
-      </option>
-      <option value="BELLACER (xx.xxx.xxx/0001-19)">
-        BELLACER (xx.xxx.xxx/0001-19)
-      </option>
-      <option value="BIBOM (xx.xxx.xxx/0001-20)">
-        BIBOM (xx.xxx.xxx/0001-20)
-      </option>
-      <option value="BRASIF (xx.xxx.xxx/0001-21)">
-        BRASIF (xx.xxx.xxx/0001-21)
-      </option>
-      <option value="CAMAGRAN (xx.xxx.xxx/0001-22)">
-        CAMAGRAN (xx.xxx.xxx/0001-22)
-      </option>
-      <option value="MINERAÇÃO CAMPINHO (xx.xxx.xxx/0001-23)">
-        MINERAÇÃO CAMPINHO (xx.xxx.xxx/0001-23)
-      </option>
-      <option value="MINERAÇÃO COLODETT (xx.xxx.xxx/0001-24)">
-        MINERAÇÃO COLODETT(xx.xxx.xxx/0001-24)
-      </option>
-      <option value="CONSTRUBLOK (xx.xxx.xxx/0001-25)">
-        CONSTRUBLOK (xx.xxx.xxx/0001-25)
-      </option>
-      <option value="CONSTRACTOR (xx.xxx.xxx/0001-26)">
-        CONSTRACTOR(xx.xxx.xxx/0001-26)
-      </option>
+      <option value="$101_NORTE">101 NORTE</option>
+      <option value="$AEL_PARTICIPACOES">A&L PARTICIPAÇÕES</option>
+      <option value="$AGRIPINO">AGRIPINO</option>
+      <option value="$AGUA_DOCE_MINERACAO">ÁGUA DOCE MINERAÇÃO</option>
+      <option value="$AGUA_PEDRA_AZUL">ÁGUA PEDRA AZUL</option>
     </select>
+    <br />
+    <br />
+    <select data-js="cnpj">
+      <option>Selecione o CNPJ</option>
+    </select>
+    <br />
+    <br />
     <button data-js="btnSearch">Pesquisar</button>
     <div>
-      <p>Coordenadas de referência:</p>
-      <h1 data-js="coordenates"></h1>
+      <p>Informações referentes à empresa selecionada:</p>
+      <p data-js="name"></p>
+      <p data-js="cnpjInHtml"></p>
+      <p data-js="address"></p>
+      <p data-js="process"></p>
+      <p data-js="coordenates"></p>
     </div>
     <script src="projetoCoordendas.js"></script>
   </body>

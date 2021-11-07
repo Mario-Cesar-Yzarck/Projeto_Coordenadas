@@ -1,9 +1,170 @@
 ;(function (win, doc) {
   'use strict'
   //O objetivo é ter um campo de input, onde se escolhe o nome da empresa e outro onde escolhe o cnpj e aparece abaixo as coordenadas referentes àquela empresa/filial.
-  var $empresaSelecionada = doc.querySelector("[data-js='nome_empresas']")
-  var $coordenates = doc.querySelector("[data-js='coordenates']")
-  var $btnSearch = doc.querySelector("[data-js='btnSearch']")
+  function app() {
+    const $empresaSelecionada = doc.querySelector("[data-js='nome_empresas']")
+    const $coordenates = doc.querySelector("[data-js='coordenates']")
+    const $btnSearch = doc.querySelector("[data-js='btnSearch']")
+    const $cnpj = doc.querySelector("[data-js='cnpj']")
+    const $name = doc.querySelector("[data-js='name']")
+    const $address = doc.querySelector("[data-js='address']")
+    const $cnpjInHtml = doc.querySelector("[data-js='cnpjInHtml']")
+    const $process = doc.querySelector("[data-js='process']")
+
+    const $101_NORTE = {
+      name: '101 Norte',
+      cnpj: ['xx.xxx.xxx/0001-01'],
+      coordenates: ['-19.693098, -40.291264'],
+      link: [
+        `https://www.google.com.br/maps/place/19%C2%B041'35.2%22S+40%C2%B017'28.6%22W/@-19.6930929,-40.2934527,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-19.693098!4d-40.291264`
+      ],
+      address: ['Rua Agriola, n 55, Alegre'],
+      process: ['13579']
+    }
+    const $AEL_PARTICIPACOES = {
+      name: 'A&L Participações',
+      cnpj: ['xx.xxx.xxx/0001-02'],
+      coordenates: ['-20.051245, -40.386612'],
+      link: [
+        `https://www.google.com.br/maps/place/20%C2%B003'04.5%22S+40%C2%B023'11.8%22W/@-20.0512399,-40.3888007,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-20.051245!4d-40.386612`
+      ],
+      address: ['Rua Guarani, n 25, Vix'],
+      process: ['555555']
+    }
+    const $AGRIPINO = {
+      name: 'Agrapino',
+      cnpj: ['xx.xxx.xxx/0001-03'],
+      coordenates: ['-19.060426, -41.014644'],
+      link: [
+        `https://www.google.com.br/maps/place/19%C2%B003'37.5%22S+41%C2%B000'52.7%22W/@-19.0604209,-41.0168327,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-19.060426!4d-41.014644`
+      ],
+      address: ['Rua 10, n 1500, Colatina'],
+      process: ['10099']
+    }
+    const $AGUA_DOCE_MINERACAO = {
+      name: 'Água Doce Mineração',
+      cnpj: [
+        'xx.xxx.xxx/0001-04',
+        'xx.xxx.xxx/0001-05',
+        'xx.xxx.xxx/0001-06',
+        'xx.xxx.xxx/0001-07'
+      ],
+      coordenates: [
+        '-18.611905, -41.017837',
+        '-18.624376, -41.023749',
+        '-18.61109, -41.01575',
+        '-18.61718, -41.01867'
+      ],
+      link: [
+        `https://www.google.com.br/maps/place/18%C2%B036'42.9%22S+41%C2%B001'04.2%22W/@-18.6118999,-41.0200257,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-18.611905!4d-41.017837`,
+        `https://www.google.com.br/maps/place/18%C2%B037'27.8%22S+41%C2%B001'25.5%22W/@-18.6243709,-41.0259377,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-18.624376!4d-41.023749`,
+        `https://www.google.com.br/maps/place/18%C2%B036'39.9%22S+41%C2%B000'56.7%22W/@-18.6110849,-41.0179387,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-18.61109!4d-41.01575`,
+        `https://www.google.com.br/maps/place/18%C2%B037'01.9%22S+41%C2%B001'07.2%22W/@-18.6171749,-41.0208587,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-18.61718!4d-41.01867`
+      ],
+      address: [
+        'Rua ndkvn, n 6575, São Xico',
+        'Rua 2, n 24, Ecops',
+        'Rua Um de Abril, n 455, Ecops',
+        'Rua H, n 262, São Xico'
+      ],
+      process: ['00000', '33333', '22233', '123577']
+    }
+    const $AGUA_PEDRA_AZUL = {
+      name: 'Água Pedra Azul',
+      cnpj: ['xx.xxx.xxx/0001-08', 'xx.xxx.xxx/0001-09'],
+      coordenates: ['-20.415114, -40.862147', '-20.615830, -40.732170'],
+      link: [
+        `https://www.google.com.br/maps/place/20%C2%B024'54.4%22S+40%C2%B051'43.7%22W/@-20.415109,-40.8643357,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-20.415114!4d-40.862147`,
+        `https://www.google.com.br/maps/place/20%C2%B036'57.0%22S+40%C2%B043'55.8%22W/@-20.615825,-40.7343587,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-20.61583!4d-40.73217`
+      ],
+      address: ['Rua 1, n 15, São Xico', 'Rua 2, n 15, Ecops'],
+      process: ['12345', '67890']
+    }
+
+    var enterprise
+
+    $btnSearch.addEventListener(
+      'click',
+      function (event) {
+        for (let i = 0; i < enterprise.cnpj.length; i++) {
+          if ($cnpj.value === enterprise.cnpj[i]) {
+            $name.textContent = 'Nome da empresa: ' + enterprise.name
+            $cnpjInHtml.innerHTML = 'CNPJ da empresa: ' + enterprise.cnpj[i]
+            $address.innerHTML = 'Endereço da empresa: ' + enterprise.address[i]
+            $process.innerHTML = 'Processo nº: ' + enterprise.process[i]
+            $coordenates.innerHTML =
+              'Coordenadas da empresa: ' +
+              `<a href="${enterprise.link[i]}" target="blanck">` +
+              enterprise.coordenates[i] +
+              '</a>'
+          }
+        }
+      },
+      false
+    )
+
+    function whatIsSelected(enterpriseSelected) {
+      if (enterpriseName(enterpriseSelected)) {
+        return ''
+      }
+      switch (enterpriseSelected.value) {
+        case '$101_NORTE':
+          enterprise = $101_NORTE
+          setCNPJInHtml(enterprise)
+          break
+        case '$AEL_PARTICIPACOES':
+          enterprise = $AEL_PARTICIPACOES
+          setCNPJInHtml(enterprise)
+          break
+        case '$AGRIPINO':
+          enterprise = $AGRIPINO
+          setCNPJInHtml(enterprise)
+          break
+        case '$AGUA_DOCE_MINERACAO':
+          enterprise = $AGUA_DOCE_MINERACAO
+          setCNPJInHtml(enterprise)
+          break
+        case '$AGUA_PEDRA_AZUL':
+          enterprise = $AGUA_PEDRA_AZUL
+          setCNPJInHtml(enterprise)
+          break
+        default:
+          break
+      }
+    }
+
+    function setCNPJInHtml(param) {
+      $cnpj.innerHTML = ''
+      for (let i = 0; i < param.cnpj.length; i++) {
+        $cnpj.innerHTML += `<option>` + param.cnpj[i] + '</option>'
+      }
+    }
+
+    function enterpriseName(enterpriseName) {
+      if (enterpriseName.value === 'Selecione a empresa') {
+        $name.textContent = ''
+        $cnpjInHtml.innerHTML = ''
+        $address.innerHTML = ''
+        $process.innerHTML = ''
+        $coordenates.innerHTML = ''
+        $cnpj.innerHTML = ''
+        $cnpj.innerHTML = `<option> Selecione o CNPJ </option>`
+        return true
+      }
+    }
+
+    $empresaSelecionada.addEventListener(
+      'change',
+      e => {
+        e.preventDefault()
+        whatIsSelected($empresaSelecionada)
+      },
+      false
+    )
+  }
+
+  app()
+
   const arrayCoordenates = [
     '-19.693098, -40.291264',
     '-20.051245, -40.386612',
@@ -14,6 +175,7 @@
     '-18.61718, -41.01867',
     '-20.415114, -40.862147',
     '-20.615830, -40.732170',
+    //ate aqui
     '-18.978711, -40.741268',
     '-18.572237, -41.277700',
     '-15.736389, -39.621111',
@@ -32,34 +194,6 @@
     '-20.036963, -40.170324',
     '-19.734730, -40.268681'
   ]
-  const arrayEmpresas = [
-    '101 NORTE (xx.xxx.xxx/0001-01)',
-    'A&L PARTICIPAÇÕES (xx.xxx.xxx/0001-02)',
-    'AGRIPINO (xx.xxx.xxx/0001-03)',
-    'ÁGUA DOCE MINERAÇÃO (xx.xxx.xxx/0001-04)',
-    'ÁGUA DOCE MINERAÇÃO (xx.xxx.xxx/0001-05)',
-    'ÁGUA DOCE MINERAÇÃO (xx.xxx.xxx/0001-06)',
-    'ÁGUA DOCE MINERAÇÃO (xx.xxx.xxx/0001-07)',
-    'ÁGUA PEDRA AZUL (xx.xxx.xxx/0001-08)',
-    'ÁGUA PEDRA AZUL (xx.xxx.xxx/0001-09)',
-    'ALMIR LAZARI (xx.xxx.xxx/0001-10)',
-    'AM GRANITOS (xx.xxx.xxx/0001-11)',
-    'AMAGRAN (xx.xxx.xxx/0001-12)',
-    'AMAGRAN (xx.xxx.xxx/0001-13)',
-    'AMAGRAN (xx.xxx.xxx/0001-14)',
-    'AMAGRAN (xx.xxx.xxx/0001-15)',
-    'AMAGRAN (xx.xxx.xxx/0001-16)',
-    'AREPEDRA (xx.xxx.xxx/0001-17)',
-    'BELA VISTA (xx.xxx.xxx/0001-18)',
-    'BELLACER (xx.xxx.xxx/0001-19)',
-    'BIBOM (xx.xxx.xxx/0001-20)',
-    'BRASIF (xx.xxx.xxx/0001-21)',
-    'CAMAGRAN (xx.xxx.xxx/0001-22)',
-    'MINERAÇÃO CAMPINHO (xx.xxx.xxx/0001-23)',
-    'MINERAÇÃO COLODETT (xx.xxx.xxx/0001-24)',
-    'CONSTRUBLOK (xx.xxx.xxx/0001-25)',
-    'CONSTRACTOR (xx.xxx.xxx/0001-26)'
-  ]
 
   const linksCoordenates = [
     `https://www.google.com.br/maps/place/19%C2%B041'35.2%22S+40%C2%B017'28.6%22W/@-19.6930929,-40.2934527,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-19.693098!4d-40.291264`,
@@ -71,6 +205,7 @@
     `https://www.google.com.br/maps/place/18%C2%B037'01.9%22S+41%C2%B001'07.2%22W/@-18.6171749,-41.0208587,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-18.61718!4d-41.01867`,
     `https://www.google.com.br/maps/place/20%C2%B024'54.4%22S+40%C2%B051'43.7%22W/@-20.415109,-40.8643357,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-20.415114!4d-40.862147`,
     `https://www.google.com.br/maps/place/20%C2%B036'57.0%22S+40%C2%B043'55.8%22W/@-20.615825,-40.7343587,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-20.61583!4d-40.73217`,
+    //ate aqui
     `https://www.google.com.br/maps/place/18%C2%B058'43.4%22S+40%C2%B044'28.6%22W/@-18.9787059,-40.7434567,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-18.978711!4d-40.741268`,
     `https://www.google.com.br/maps/place/18%C2%B034'20.1%22S+41%C2%B016'39.7%22W/@-18.5722319,-41.2798887,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-18.572237!4d-41.2777`,
     `https://www.google.com.br/maps/place/15%C2%B044'11.0%22S+39%C2%B037'16.0%22W/@-15.7363838,-39.6232997,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-15.736389!4d-39.621111`,
@@ -90,22 +225,81 @@
     `https://www.google.com.br/maps/place/19%C2%B044'05.0%22S+40%C2%B016'07.3%22W/@-19.7347249,-40.2708697,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d-19.73473!4d-40.268681`
   ]
 
-  $btnSearch.addEventListener(
-    'click',
-    function (event) {
-      event.preventDefault()
-      $coordenates.innerHTML = ''
-      arrayEmpresas.forEach(function (element, index) {
-        if ($empresaSelecionada.value === element)
-          $coordenates.innerHTML =
-            `<a href="${linksCoordenates[index]}" target="blanck">` +
-            arrayCoordenates[index] +
-            '</a>'
-      })
-    },
-    false
-  )
   /*
+parte do HTML
+<option value="$ALMIR LAZARI (xx.xxx.xxx/0001-10)">
+        ALMIR LAZARI (xx.xxx.xxx/0001-10)
+      </option>
+      <option value="AM GRANITOS (xx.xxx.xxx/0001-11)">
+        AM GRANITOS (xx.xxx.xxx/0001-11)
+      </option>
+      <option value="AMAGRAN (xx.xxx.xxx/0001-12)">
+        AMAGRAN (xx.xxx.xxx/0001-12)
+      </option>
+      <option value="AMAGRAN (xx.xxx.xxx/0001-13)">
+        AMAGRAN (xx.xxx.xxx/0001-13)
+      </option>
+      <option value="AMAGRAN (xx.xxx.xxx/0001-14)">
+        AMAGRAN (xx.xxx.xxx/0001-14)
+      </option>
+      <option value="AMAGRAN (xx.xxx.xxx/0001-15)">
+        AMAGRAN (xx.xxx.xxx/0001-15)
+      </option>
+      <option value="AMAGRAN (xx.xxx.xxx/0001-16)">
+        AMAGRAN (xx.xxx.xxx/0001-16)
+      </option>
+      <option value="AREPEDRA (xx.xxx.xxx/0001-17)">
+        AREPEDRA (xx.xxx.xxx/0001-17)
+      </option>
+      <option value="BELA VISTA (xx.xxx.xxx/0001-18)">
+        BELA VISTA(xx.xxx.xxx/0001-18)
+      </option>
+      <option value="BELLACER (xx.xxx.xxx/0001-19)">
+        BELLACER (xx.xxx.xxx/0001-19)
+      </option>
+      <option value="BIBOM (xx.xxx.xxx/0001-20)">
+        BIBOM (xx.xxx.xxx/0001-20)
+      </option>
+      <option value="BRASIF (xx.xxx.xxx/0001-21)">
+        BRASIF (xx.xxx.xxx/0001-21)
+      </option>
+      <option value="CAMAGRAN (xx.xxx.xxx/0001-22)">
+        CAMAGRAN (xx.xxx.xxx/0001-22)
+      </option>
+      <option value="MINERAÇÃO CAMPINHO (xx.xxx.xxx/0001-23)">
+        MINERAÇÃO CAMPINHO (xx.xxx.xxx/0001-23)
+      </option>
+      <option value="MINERAÇÃO COLODETT (xx.xxx.xxx/0001-24)">
+        MINERAÇÃO COLODETT(xx.xxx.xxx/0001-24)
+      </option>
+      <option value="CONSTRUBLOK (xx.xxx.xxx/0001-25)">
+        CONSTRUBLOK (xx.xxx.xxx/0001-25)
+      </option>
+      <option value="CONSTRACTOR (xx.xxx.xxx/0001-26)">
+        CONSTRACTOR(xx.xxx.xxx/0001-26)
+      </option>
+
+//parte do arrayEmpresas
+  'ALMIR LAZARI (xx.xxx.xxx/0001-10)',
+    'AM GRANITOS (xx.xxx.xxx/0001-11)',
+    'AMAGRAN (xx.xxx.xxx/0001-12)',
+    'AMAGRAN (xx.xxx.xxx/0001-13)',
+    'AMAGRAN (xx.xxx.xxx/0001-14)',
+    'AMAGRAN (xx.xxx.xxx/0001-15)',
+    'AMAGRAN (xx.xxx.xxx/0001-16)',
+    'AREPEDRA (xx.xxx.xxx/0001-17)',
+    'BELA VISTA (xx.xxx.xxx/0001-18)',
+    'BELLACER (xx.xxx.xxx/0001-19)',
+    'BIBOM (xx.xxx.xxx/0001-20)',
+    'BRASIF (xx.xxx.xxx/0001-21)',
+    'CAMAGRAN (xx.xxx.xxx/0001-22)',
+    'MINERAÇÃO CAMPINHO (xx.xxx.xxx/0001-23)',
+    'MINERAÇÃO COLODETT (xx.xxx.xxx/0001-24)',
+    'CONSTRUBLOK (xx.xxx.xxx/0001-25)',
+    'CONSTRACTOR (xx.xxx.xxx/0001-26)'
+
+
+
   <div class="form-group">
       <p id="name"></p>
       <p id="CNPJ"></p>
