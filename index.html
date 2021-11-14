@@ -5,6 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projeto_Coordenadas</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      th,
+      tr,
+      td {
+        border: solid 1px black;
+        color: black;
+      }
+      #header {
+        text-align: center;
+      }
+      th,
+      td {
+        width: 20%;
+      }
+    </style>
   </head>
   <body>
     <h1>Projeto Coordenadas</h1>
@@ -19,22 +37,37 @@
       <option value="$AGRIPINO">AGRIPINO</option>
       <option value="$AGUA_DOCE_MINERACAO">ÁGUA DOCE MINERAÇÃO</option>
       <option value="$AGUA_PEDRA_AZUL">ÁGUA PEDRA AZUL</option>
+      <option value="$ALMIR_LAZARI">ALMIR LAZARI</option>
+      <option value="$AM_GRANITOS">AM GRANITOS</option>
+      <option value="$AMAGRAN">AMAGRAN</option>
+      <option value="$AREPEDRA">AREPEDRA</option>
+      <option value="$BELA_VISTA">BELA VISTA</option>
+      <option value="$BELLACER">BELLACER</option>
+      <option value="$BIBOM">BIBOM</option>
+      <option value="$BRASIF">BRASIF</option>
+      <option value="$CAMAGRAN">CAMAGRAN</option>
+      <option value="$MINERAÇÃO CAMPINHO">MINERAÇÃO CAMPINHO</option>
+      <option value="$MINERAÇÃO COLODETT">MINERAÇÃO COLODETT</option>
+      <option value="$CONSTRUBLOK">CONSTRUBLOK</option>
+      <option value="$CONSTRACTOR">CONSTRACTOR</option>
     </select>
+
     <br />
     <br />
-    <select data-js="cnpj">
-      <option>Selecione o CNPJ</option>
-    </select>
-    <br />
-    <br />
+
     <button data-js="btnSearch">Pesquisar</button>
     <div>
       <p>Informações referentes à empresa selecionada:</p>
-      <p data-js="name"></p>
-      <p data-js="cnpjInHtml"></p>
-      <p data-js="address"></p>
-      <p data-js="process"></p>
-      <p data-js="coordenates"></p>
+      <table style="text-align: center">
+        <tr>
+          <th>Nome Empresa</th>
+          <th>CNPJ</th>
+          <th>Endereço</th>
+          <th>Processo</th>
+          <th>Coordenadas</th>
+        </tr>
+        <tbody data-js="table"></tbody>
+      </table>
     </div>
     <script src="projetoCoordendas.js"></script>
   </body>
