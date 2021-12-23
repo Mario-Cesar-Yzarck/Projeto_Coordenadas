@@ -7,7 +7,7 @@
     var $table = doc.querySelector("[data-js='table']")
     var enterprise = []
     var requestURL =
-      'https://raw.githubusercontent.com/Mario-Cesar-Yzarck/data/main/data.json'
+      'https://raw.githubusercontent.com/Mario-Cesar-Yzarck/Projeto_Coordenadas/main/data.json'
 
     const ajax = new XMLHttpRequest()
     ajax.open('GET', requestURL)
