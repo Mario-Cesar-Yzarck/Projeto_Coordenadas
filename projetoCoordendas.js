@@ -31,7 +31,7 @@
         html += `<td>${element.cnpj}</td>`
         html += `<td>${element.address}</td>`
         html += `<td>${element.process}</td>`
-        html += `<td><a href="${element.link}" target="_blank">${element.coordenates}</a></td>`
+        html += `<td><a href="${element.link}" target="_blank">${element.coordenates}</a> <img id="icon" src="icon/placeholder.png"</td>`
         $table.innerHTML = html
       }
     }
@@ -103,11 +103,11 @@
         case '$CAMAGRAN':
           enterprise.push(data.$CAMAGRAN)
           break
-        case '$MINERAÇÃO_CAMPINHO':
-          enterprise.push(data.$MINERAÇÃO_CAMPINHO)
+        case '$MINERACAO_CAMPINHO':
+          enterprise.push(data.$MINERACAO_CAMPINHO)
           break
-        case '$MINERAÇÃO_COLODETT':
-          enterprise.push(data.$MINERAÇÃO_COLODETT)
+        case '$MINERACAO_COLODETT':
+          enterprise.push(data.$MINERACAO_COLODETT)
           break
         case '$CONSTRUBLOK':
           enterprise.push(data.$CONSTRUBLOK)

@@ -5,24 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projeto_Coordenadas</title>
-    <style>
-      table {
-        border-collapse: collapse;
-      }
-      th,
-      tr,
-      td {
-        border: solid 1px black;
-        color: black;
-      }
-      #header {
-        text-align: center;
-      }
-      th,
-      td {
-        width: 20%;
-      }
-    </style>
+    <link href="style.css" rel="stylesheet" />
   </head>
   <body>
     <h1>Projeto Coordenadas</h1>
@@ -46,8 +29,8 @@
       <option value="$BIBOM">BIBOM</option>
       <option value="$BRASIF">BRASIF</option>
       <option value="$CAMAGRAN">CAMAGRAN</option>
-      <option value="$MINERAÇÃO CAMPINHO">MINERAÇÃO CAMPINHO</option>
-      <option value="$MINERAÇÃO COLODETT">MINERAÇÃO COLODETT</option>
+      <option value="$MINERACAO_CAMPINHO">MINERAÇÃO CAMPINHO</option>
+      <option value="$MINERACAO_COLODETT">MINERAÇÃO COLODETT</option>
       <option value="$CONSTRUBLOK">CONSTRUBLOK</option>
       <option value="$CONSTRACTOR">CONSTRACTOR</option>
     </select>
@@ -58,7 +41,7 @@
     <button data-js="btnSearch">Pesquisar</button>
     <div>
       <p>Informações referentes à empresa selecionada:</p>
-      <table style="text-align: center">
+      <table id="table" style="text-align: center">
         <tr>
           <th>Nome Empresa</th>
           <th>CNPJ</th>
@@ -69,6 +52,10 @@
         <tbody data-js="table"></tbody>
       </table>
     </div>
+    <footer>
+      <h3>Responsável Técnico:</h3>
+      <h4>Artur Cunha Fialho - Engenheiro Florestal</h4>
+    </footer>
     <script src="projetoCoordendas.js"></script>
   </body>
 </html>
